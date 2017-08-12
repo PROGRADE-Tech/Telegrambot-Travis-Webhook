@@ -1,11 +1,11 @@
-# Tarchivebot-Travis-Webhook
+# Telegrambot-Travis-Webhook
 A small webhook service to notify a telegram chat of travis changes
 
 # Setup
 This webhook is intended to be run as a docker container behind nginx.
 Other ways of running this webhook are untested and may not work
 
-1. Clone the repository to a directory of your choice with `git clone https://github.com/PROGRADE-Tech/Tarchivebot-Travis-Webhook.git`
+1. Clone the repository to a directory of your choice with `git clone https://github.com/PROGRADE-Tech/Telegrambot-Travis-Webhook.git`
 
 2. Install all dependancies with `npm install`
 
@@ -17,8 +17,8 @@ Values:<br>
 `chatId` is the chatId of the Telegram chat you want the bot to post to.<br>
 `path` is the path you want your webhook to be exposed on (this is not the full url but only the part after your domain).
 
-4. Build the docker container with`docker build -t prograde-tech/tarchivebot-travis-webhook .`
-5. Then run it with `docker run -d --name travis-webhook -p 3000:3000 prograde-tech/tarchivebot-travis-webhook`. You can change the name and port as you see fit.
+4. Build the docker container with`docker build -t prograde-tech/telegrambot-travis-webhook .`
+5. Then run it with `docker run -d --name travis-webhook -p 3000:3000 prograde-tech/telegrambot-travis-webhook`. You can change the name and port as you see fit.
 
 6. Set up nginx to reverse proxy to your container, this may look a bit like this:
 ```

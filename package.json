@@ -1,5 +1,5 @@
 {
-  "name": "tarchivebot-travis-webhook",
+  "name": "telegrambot-travis-webhook",
   "version": "1.0.0",
   "description": "Small webhook to forward msgs",
   "main": "index.js",
@@ -15,6 +15,6 @@
   },
   "repository": {
     "type" : "git",
-    "url" : "https://github.com/PROGRADE-Tech/Tarchivebot-Travis-Webhook.git"
+    "url" : "https://github.com/PROGRADE-Tech/Telegrambot-Travis-Webhook.git"
   }
 }

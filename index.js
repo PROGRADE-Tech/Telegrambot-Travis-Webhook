@@ -47,8 +47,8 @@ fetch('https://api.travis-ci.org/config')
         res.end('no such location')
       })
     }).listen(3000)
-    
+
     handler.on('*', function (event) {
-        sendToTelegram("*"+event.payload.status_message+":*\n"+"Build `"+event.payload.number+"` for `"+event.payload.repository.name+"` on branch `"+event.payload.branch+"`")
+        sendToTelegram("*"+event.payload.status_message.toUpperCase()+":*\n"+"Build `"+event.payload.number+"` for `"+event.payload.repository.name+"` on branch `"+event.payload.branch+"`")
     })
   })

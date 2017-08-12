@@ -27,7 +27,7 @@ function sendToTelegram(message) {
   };
 
 if (conf.isKanna) {
-  sendToTelegram("Ravioli Ravioli start the Traviswebhookioli")
+  sendToTelegram("Ravioli Ravioli start the Traviswebhookloli")
 } else {
   sendToTelegram("Running Travis webhook on `" + conf.path + "`")
 }

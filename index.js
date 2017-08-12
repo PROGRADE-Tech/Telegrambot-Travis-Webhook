@@ -47,32 +47,8 @@ fetch('https://api.travis-ci.org/config')
         res.end('no such location')
       })
     }).listen(3000)
-
-    handler.on('error', function (err) {
-      console.error('Error:', err.message)
-      sendToTelegram('Error:\n`'+ err.message+'`')
-    })
-
-    handler.on('success', function (event) {
-      console.log('Build %s success for %s branch %s',
-        event.payload.number,
-        event.payload.repository.name,
-        event.payload.branch)
-      sendToTelegram("*PASSED:*\n"+"Build `"+event.payload.number+"` for `"+event.payload.repository.name+"` on branch `"+event.payload.branch+"`")
-    })
-
-    handler.on('failure', function (event) {
-        console.log('Build failed!')
-        sendToTelegram("*FAILED:*\n"+"Build `"+event.payload.number+"` for `"+event.payload.repository.name+"` on branch `"+event.payload.branch+"`")
-    })
-
-    handler.on('start', function (event) {
-        console.log('Build started!')
-        sendToTelegram("*STARTED:*\n"+"Build `"+event.payload.number+"` for `"+event.payload.repository.name+"` on branch `"+event.payload.branch+"`")
-    })
-
-    handler.on('cancel', function (event) {
-        console.log('Build cancelled!')
-        sendToTelegram("*CANCELLED:*\n"+"Build `"+event.payload.number+"` for `"+event.payload.repository.name+"` on branch `"+event.payload.branch+"`")
+    
+    handler.on('*', function (event) {
+        sendToTelegram("*"+event.payload.status_message+":*\n"+"Build `"+event.payload.number+"` for `"+event.payload.repository.name+"` on branch `"+event.payload.branch+"`")
     })
   })

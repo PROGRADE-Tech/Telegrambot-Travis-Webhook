@@ -49,4 +49,18 @@ server {
         }
 }
 ```
-7. Congratulations, your webhook should now be completely functional. Please contact @Hoi15A or open an Issue if you have problems or have found a bug.
+7. Edit your `.travis.yml` in your projects to include notifications:
+```yml
+  notifications:
+    webhooks: https://travis.example.com/webhook
+      on_success: always # default: always
+      on_failure: always # default: always
+      on_start: always   # default: never
+      on_cancel: always # default: always
+      on_error: always # default: always
+```
+
+8. Congratulations, your webhook should now be completely functional. Please contact [@Hoi15A][1] or open an Issue if you have problems or have found a bug.
+
+
+[1]: https://github.com/Hoi15A
